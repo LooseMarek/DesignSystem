@@ -1,0 +1,15 @@
+{
+  "originHash" : "6f26938f65f199db84a4a0a2f0a57e190108727caf45c13d0f446c9aa4afcbaf",
+  "pins" : [
+    {
+      "identity" : "designsystem",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/LooseMarek/DesignSystem",
+      "state" : {
+        "branch" : "master",
+        "revision" : "3e8770ab1f58f9d4ff1814d5fde190fc3034d817"
+      }
+    }
+  ],
+  "version" : 3
+}
