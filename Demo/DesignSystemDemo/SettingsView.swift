@@ -6,7 +6,7 @@ struct SettingsView: View {
     
     var body: some View {
         NavigationView {
-            DSForm(.init {
+            DSScrollView(.init {
                 DSSection(.init(
                     headerText: "Appearance"
                 ) {
@@ -16,15 +16,9 @@ struct SettingsView: View {
                 DSSection(.init(
                     headerText: "About"
                 ) {
-                    HStack {
-                        DSText(.init(text: "Version", font: .dsBody))
-                        Spacer()
-                        DSText(.init(text: "1.0.0", font: .dsBody, color: .dsTextSecondary))
-                    }
-                    HStack {
-                        DSText(.init(text: "Design System Version", font: .dsBody))
-                        Spacer()
-                        DSText(.init(text: "1.0.0", font: .dsBody, color: .dsTextSecondary))
+                    VStack(alignment: .leading, spacing: .dsSpacingMd) {
+                        DSSectionDetailRow(title: "Version", value: "1.0.0")
+                        DSSectionDetailRow(title: "Design System Version", value: "1.0.0")
                     }
                 })
             })

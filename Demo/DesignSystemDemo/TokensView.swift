@@ -40,21 +40,19 @@ struct ColorTokensDemo: View {
         ("dsError", .dsError)
     ]
     var body: some View {
-        DSCard(.init {
-            VStack(alignment: .leading, spacing: .dsSpacingSm) {
-                ForEach(colorTokens, id: \.0) { name, color in
-                    HStack {
-                        Text(name)
-                            .foregroundColor(.dsText)
-                        Spacer()
-                        RoundedRectangle(cornerRadius: .dsCornerRadiusSm)
-                            .fill(color)
-                            .frame(width: 32, height: 32)
-                            .overlay(RoundedRectangle(cornerRadius: .dsCornerRadiusSm).stroke(Color.dsBorder, lineWidth: 1))
-                    }
+        VStack(alignment: .leading, spacing: .dsSpacingSm) {
+            ForEach(colorTokens, id: \.0) { name, color in
+                HStack {
+                    Text(name)
+                        .foregroundColor(.dsText)
+                    Spacer()
+                    RoundedRectangle(cornerRadius: .dsCornerRadiusSm)
+                        .fill(color)
+                        .frame(width: 32, height: 32)
+                        .overlay(RoundedRectangle(cornerRadius: .dsCornerRadiusSm).stroke(Color.dsBorder, lineWidth: 1))
                 }
             }
-        })
+        }
     }
 }
 
@@ -72,18 +70,16 @@ struct TypographyTokensDemo: View {
         ("dsCaption2", .dsCaption2)
     ]
     var body: some View {
-        DSCard(.init {
-            HStack(spacing: .zero) {
-                VStack(alignment: .leading, spacing: .dsSpacingSm) {
-                    ForEach(fontTokens, id: \.0) { name, font in
-                        Text(name)
-                            .font(font)
-                            .foregroundColor(.dsText)
-                    }
+        HStack(spacing: .zero) {
+            VStack(alignment: .leading, spacing: .dsSpacingSm) {
+                ForEach(fontTokens, id: \.0) { name, font in
+                    Text(name)
+                        .font(font)
+                        .foregroundColor(.dsText)
                 }
-                Spacer()
             }
-        })
+            Spacer()
+        }
     }
 }
 
@@ -98,24 +94,22 @@ struct SpacingTokensDemo: View {
         ("dsSpacingXxl", .dsSpacingXxl)
     ]
     var body: some View {
-        DSCard(.init {
-            VStack(alignment: .leading, spacing: .dsSpacingSm) {
-                ForEach(spacingTokens, id: \.0) { name, size in
-                    HStack {
-                        Text(name)
-                            .foregroundColor(.dsText)
-                        Spacer()
-                        VStack {
-                            Text("\(Int(size))")
-                                .padding(.dsSpacingXs)
-                                .font(.dsCaption)
-                                .foregroundColor(.dsTextSecondary)
-                        }
-                        .background(Color.dsBorder)
-                        .cornerRadius(.dsCornerRadiusSm)
+        VStack(alignment: .leading, spacing: .dsSpacingSm) {
+            ForEach(spacingTokens, id: \.0) { name, size in
+                HStack {
+                    Text(name)
+                        .foregroundColor(.dsText)
+                    Spacer()
+                    VStack {
+                        Text("\(Int(size))")
+                            .padding(.dsSpacingXs)
+                            .font(.dsCaption)
+                            .foregroundColor(.dsTextSecondary)
                     }
+                    .background(Color.dsBorder)
+                    .cornerRadius(.dsCornerRadiusSm)
                 }
             }
-        })
+        }
     }
 } 
