@@ -1,6 +1,6 @@
 import SwiftUI
 
-extension DSScrollView {
+extension DSScroll {
     public struct ViewModel {
         let content: Content
         

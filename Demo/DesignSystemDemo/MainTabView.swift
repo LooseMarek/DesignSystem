@@ -10,21 +10,27 @@ import DesignSystem
 
 struct MainTabView: View {
     var body: some View {
-        TabView {
-            ComponentsView()
-                .tabItem {
-                    Label("Components", systemImage: "square.grid.2x2")
+        DSTab(
+            .init {
+                DSTabItem(
+                    labelText: "Components",
+                    labelIcon: "square.grid.2x2"
+                ) {
+                    ComponentsView()
                 }
-            
-            TokensView()
-                .tabItem {
-                    Label("Tokens", systemImage: "paintpalette")
+                DSTabItem(
+                    labelText: "Tokens",
+                    labelIcon: "paintpalette"
+                ) {
+                    TokensView()
                 }
-            
-            SettingsView()
-                .tabItem {
-                    Label("Settings", systemImage: "gear")
+                DSTabItem(
+                    labelText: "Settings",
+                    labelIcon: "gear"
+                ) {
+                    SettingsView()
                 }
-        }
+            }
+        )
     }
 }

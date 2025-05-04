@@ -6,7 +6,7 @@ struct SettingsView: View {
     
     var body: some View {
         NavigationView {
-            DSScrollView(.init {
+            DSScroll(.init {
                 DSSection(.init(
                     headerText: "Appearance"
                 ) {

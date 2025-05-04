@@ -44,7 +44,7 @@ public struct DSSection<Content: View>: View {
 // MARK: - Preview
 struct DSSection_Previews: PreviewProvider {
     static var previews: some View {
-        DSScrollView(.init {
+        DSScroll(.init {
             DSSection(
                 .init(
                     headerText: "Section 1"

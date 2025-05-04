@@ -4,7 +4,7 @@ import DesignSystem
 struct ComponentsView: View {
     var body: some View {
         NavigationView {
-            DSScrollView(.init {
+            DSScroll(.init {
                 DSSection(.init(
                     headerText: "Buttons"
                 ) {

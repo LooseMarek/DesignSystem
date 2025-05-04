@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct DSScrollView<Content: View>: View {
+public struct DSScroll<Content: View>: View {
     
     let viewModel: ViewModel
     
@@ -21,9 +21,9 @@ public struct DSScrollView<Content: View>: View {
 }
 
 // MARK: - Preview
-struct DSScrollView_Previews: PreviewProvider {
+struct DSScroll_Previews: PreviewProvider {
     static var previews: some View {
-        DSScrollView(
+        DSScroll(
             .init {
                 VStack(spacing: .dsSpacingMd) {
                     DSText(

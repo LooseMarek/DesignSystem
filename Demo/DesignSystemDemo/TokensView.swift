@@ -4,7 +4,7 @@ import DesignSystem
 struct TokensView: View {
     var body: some View {
         NavigationView {
-            DSScrollView(.init {
+            DSScroll(.init {
                 DSSection(.init(
                     headerText: "Colors"
                 ) {
