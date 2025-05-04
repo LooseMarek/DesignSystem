@@ -26,13 +26,15 @@ struct DSScrollView_Previews: PreviewProvider {
         DSScrollView(
             .init {
                 VStack(spacing: .dsSpacingMd) {
-                    DSText(.init(
-                        text: "Scrollable Content",
-                        font: .dsHeadline,
-                        color: .dsText,
-                        alignment: .leading,
-                        lineLimit: nil
-                    ))
+                    DSText(
+                        .init(
+                            text: "Scrollable Content",
+                            font: .dsHeadline,
+                            color: .dsText,
+                            alignment: .leading,
+                            lineLimit: nil
+                        )
+                    )
                     
                     ForEach(0..<10) { index in
                         DSCard(

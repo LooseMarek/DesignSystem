@@ -41,7 +41,6 @@ The Design System includes the following components:
 - `DSCard`: Card component for content grouping
 - `DSSection`: Section component for content organization
 - `DScrollView`: Custom scroll view with consistent styling
-- `DSForm`: Form component for data input
 
 ### Interactive Components
 - `DSToggle`: Toggle switch component

@@ -9,16 +9,26 @@ public struct DSSection<Content: View>: View {
     
     public var body: some View {
         Section {
-            viewModel.content
+            DSCard(
+                .init {
+                    viewModel.content
+                        .frame(maxWidth: .infinity)
+                }
+            )
         } header: {
-            DSText(.init(
-                text: viewModel.headerText.localizedCapitalized,
-                font: .dsHeadline,
-                color: .dsText,
-                alignment: .leading,
-                lineLimit: nil
-            ))
-            .textCase(nil)
+            HStack(spacing: .zero) {
+                DSText(
+                    .init(
+                        text: viewModel.headerText.localizedCapitalized,
+                        font: .dsHeadline,
+                        color: .dsText,
+                        alignment: .leading,
+                        lineLimit: nil
+                    )
+                )
+                .textCase(nil)
+                Spacer()
+            }
         }
         .listRowBackground(Color.dsSurface)
         .listRowInsets(EdgeInsets(
@@ -34,20 +44,23 @@ public struct DSSection<Content: View>: View {
 // MARK: - Preview
 struct DSSection_Previews: PreviewProvider {
     static var previews: some View {
-        List {
+        DSScrollView(.init {
             DSSection(
                 .init(
                     headerText: "Section 1"
                 ) {
-                    DSText(
-                        .init(
-                            text: "Content for section 1",
-                            font: .dsBody,
-                            color: .dsText,
-                            alignment: .leading,
-                            lineLimit: nil
+                    HStack(spacing: .zero) {
+                        DSText(
+                            .init(
+                                text: "Content for section 1",
+                                font: .dsBody,
+                                color: .dsText,
+                                alignment: .leading,
+                                lineLimit: nil
+                            )
                         )
-                    )
+                        Spacer()
+                    }
                 }
             )
             DSSection(
@@ -74,7 +87,6 @@ struct DSSection_Previews: PreviewProvider {
                     }
                 }
             )
-        }
-        .background(Color.dsBackground)
+        })
     }
 }

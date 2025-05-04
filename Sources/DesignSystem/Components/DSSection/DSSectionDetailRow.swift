@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct DSFormDetailRow: View {
+public struct DSSectionDetailRow: View {
     let title: String
     let value: String
     

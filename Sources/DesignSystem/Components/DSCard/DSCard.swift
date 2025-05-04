@@ -56,7 +56,8 @@ struct DSCard_Previews: PreviewProvider {
                 }
             )
         }
-        .padding()
+        .frame(maxWidth: .infinity)
+        .frame(maxHeight: .infinity)
         .background(Color.dsBackground)
     }
 }
