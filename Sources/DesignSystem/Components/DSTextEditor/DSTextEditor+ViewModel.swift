@@ -2,24 +2,18 @@ import SwiftUI
 
 extension DSTextEditor {
     public struct ViewModel {
-        let text: Binding<String>
+        @Binding var text: String
         let placeholder: String
         let height: CGFloat
-        let backgroundColor: Color
-        let cornerRadius: CGFloat
         
         public init(
             text: Binding<String>,
             placeholder: String = "",
-            height: CGFloat = 100,
-            backgroundColor: Color = .dsSurface,
-            cornerRadius: CGFloat = .dsCornerRadiusMd
+            height: CGFloat = 100
         ) {
-            self.text = text
+            self._text = text
             self.placeholder = placeholder
             self.height = height
-            self.backgroundColor = backgroundColor
-            self.cornerRadius = cornerRadius
         }
     }
 }

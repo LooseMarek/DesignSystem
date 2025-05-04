@@ -9,18 +9,25 @@ public struct DSTextEditor: View {
     
     public var body: some View {
         ZStack(alignment: .topLeading) {
-            TextEditor(text: viewModel.text)
-                .frame(height: viewModel.height)
-                .background(viewModel.backgroundColor)
-                .cornerRadius(.dsCornerRadiusMd)
-            
-            if viewModel.text.wrappedValue.isEmpty {
+            if viewModel.$text.wrappedValue.isEmpty {
                 Text(viewModel.placeholder)
                     .foregroundColor(.dsTextSecondary)
-                    .padding(.horizontal, 4)
-                    .padding(.vertical, 8)
+                    .padding(.dsSpacingMd)
             }
+            TextEditor(text: viewModel.$text)
+                .foregroundColor(.dsText)
+                .padding(.vertical, .dsSpacingXs)
+                .padding(.horizontal, .dsSpacingSm)
+                .scrollContentBackground(.hidden)
+                
         }
+        .frame(height: viewModel.height)
+        .background(Color.dsSurface)
+        .cornerRadius(.dsCornerRadiusMd)
+        .overlay(
+            RoundedRectangle(cornerRadius: .dsCornerRadiusMd)
+                .stroke(Color.dsBorder, lineWidth: 1)
+        )
     }
 }
 
@@ -28,23 +35,23 @@ public struct DSTextEditor: View {
 struct DSTextEditor_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: .dsSpacingMd) {
-            DSTextEditor(.init(
-                text: .constant(""),
-                placeholder: "Enter your text here...",
-                height: 100,
-                backgroundColor: .dsSurface,
-                cornerRadius: .dsCornerRadiusMd
-            ))
-            
-            DSTextEditor(.init(
-                text: .constant("Some text"),
-                placeholder: "Enter your text here...",
-                height: 150,
-                backgroundColor: .dsSurface,
-                cornerRadius: .dsCornerRadiusMd
-            ))
+            DSTextEditor(
+                .init(
+                    text: .constant(""),
+                    placeholder: "Enter your text here..."
+                )
+            )
+            DSTextEditor(
+                .init(
+                    text: .constant("Some text"),
+                    placeholder: "Enter your text here...",
+                    height: 150
+                )
+            )
         }
-        .padding()
+        .padding(.dsSpacingMd)
+        .frame(maxWidth: .infinity)
+        .frame(maxHeight: .infinity)
         .background(Color.dsBackground)
     }
 }

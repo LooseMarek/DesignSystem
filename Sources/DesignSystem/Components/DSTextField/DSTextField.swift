@@ -17,20 +17,26 @@ public struct DSTextField: View {
             }
             
             Group {
-                if viewModel.isSecure {
-                    SecureField(
-                        viewModel.placeholder,
-                        text: viewModel.$text
-                    )
-                    .keyboardType(viewModel.keyboardType)
-                    .textContentType(viewModel.textContentType)
-                } else {
-                    TextField(
-                        viewModel.placeholder,
-                        text: viewModel.$text
-                    )
-                    .keyboardType(viewModel.keyboardType)
-                    .textContentType(viewModel.textContentType)
+                ZStack(alignment: .topLeading) {
+                    if viewModel.$text.wrappedValue.isEmpty {
+                        Text(viewModel.placeholder)
+                            .foregroundColor(.dsTextSecondary)
+                    }
+                    if viewModel.isSecure {
+                        SecureField(
+                            "",
+                            text: viewModel.$text
+                        )
+                        .keyboardType(viewModel.keyboardType)
+                        .textContentType(viewModel.textContentType)
+                    } else {
+                        TextField(
+                            "",
+                            text: viewModel.$text
+                        )
+                        .keyboardType(viewModel.keyboardType)
+                        .textContentType(viewModel.textContentType)
+                    }
                 }
             }
             .textFieldStyle(PlainTextFieldStyle())
@@ -85,8 +91,9 @@ struct DSTextField_Previews: PreviewProvider {
                 textContentType: .telephoneNumber
             ))
         }
-        .padding()
+        .padding(.dsSpacingMd)
+        .frame(maxWidth: .infinity)
+        .frame(maxHeight: .infinity)
         .background(Color.dsBackground)
-        .preferredColorScheme(.dark)
     }
 } 
