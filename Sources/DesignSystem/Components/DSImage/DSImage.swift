@@ -16,8 +16,8 @@ public struct DSImage: View {
                 width: viewModel.size.value.width,
                 height: viewModel.size.value.height
             )
-            .background(viewModel.backgroundColor ?? .clear)
-            .cornerRadius(viewModel.cornerRadius ?? .dsCornerRadiusMd)
+            .background(viewModel.backgroundColor)
+            .cornerRadius(viewModel.cornerRadius)
     }
 }
 

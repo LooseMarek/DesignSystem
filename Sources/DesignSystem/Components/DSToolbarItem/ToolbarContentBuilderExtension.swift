@@ -16,9 +16,7 @@ extension ToolbarContentBuilder {
                     image: .init(
                         image: Image(systemName: "plus"),
                         size: .small,
-                        contentMode: .fit,
-                        backgroundColor: .clear,
-                        cornerRadius: nil
+                        contentMode: .fit
                     )
                 )
             )
@@ -40,9 +38,7 @@ extension ToolbarContentBuilder {
                     image: .init(
                         image: Image(systemName: "square.and.arrow.up"),
                         size: .small,
-                        contentMode: .fit,
-                        backgroundColor: .clear,
-                        cornerRadius: nil
+                        contentMode: .fit
                     )
                 )
             )
@@ -64,9 +60,7 @@ extension ToolbarContentBuilder {
                     image: .init(
                         image: Image(systemName: "trash"),
                         size: .small,
-                        contentMode: .fit,
-                        backgroundColor: .clear,
-                        cornerRadius: nil
+                        contentMode: .fit
                     )
                 )
             )

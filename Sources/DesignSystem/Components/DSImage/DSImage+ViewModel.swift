@@ -5,15 +5,15 @@ extension DSImage {
         public let image: Image
         public let size: Size
         public let contentMode: ContentMode
-        public let backgroundColor: Color?
-        public let cornerRadius: CGFloat?
+        public let backgroundColor: Color
+        public let cornerRadius: CGFloat
         
         public init(
             image: Image,
             size: Size,
             contentMode: ContentMode,
-            backgroundColor: Color? = nil,
-            cornerRadius: CGFloat? = nil
+            backgroundColor: Color = .clear,
+            cornerRadius: CGFloat = .zero
         ) {
             self.image = image
             self.size = size
