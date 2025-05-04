@@ -18,7 +18,7 @@ public struct DSSectionDetailRow: View {
                 .init(
                     text: title,
                     font: .dsSubheadline,
-                    color: .dsText,
+                    color: .dsTextSecondary,
                     alignment: .leading,
                     lineLimit: nil
                 )
