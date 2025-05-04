@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import DesignSystem
 
 @main
 struct DesignSystemDemoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
+                .preferredColorScheme(.dark)
         }
     }
 }
