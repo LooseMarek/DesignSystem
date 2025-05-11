@@ -29,5 +29,13 @@ extension DSButton {
             case .large: return .dsHeadline
             }
         }
+        
+        public var fabSize: CGFloat {
+            switch self {
+            case .small: return 40
+            case .medium: return 48
+            case .large: return 56
+            }
+        }
     }
 }

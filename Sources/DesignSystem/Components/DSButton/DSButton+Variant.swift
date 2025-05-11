@@ -6,6 +6,7 @@ extension DSButton {
         case secondary
         case tertiary
         case destructive
+        case fab
         
         public var backgroundColor: Color {
             switch self {
@@ -13,6 +14,7 @@ extension DSButton {
             case .secondary: return .dsSurface
             case .tertiary: return .clear
             case .destructive: return .dsError
+            case .fab: return .dsSurface
             }
         }
         
@@ -22,6 +24,7 @@ extension DSButton {
             case .secondary: return .dsText
             case .tertiary: return .dsPrimary
             case .destructive: return .dsBackground
+            case .fab: return .dsPrimary
             }
         }
     }

@@ -3,6 +3,28 @@ import SwiftUI
 extension ToolbarContentBuilder {
     @MainActor
     @ToolbarContentBuilder
+    public static func back(action: @escaping () -> Void) -> some ToolbarContent {
+        ToolbarItem(placement: .navigationBarLeading) {
+            DSButton(
+                .init(
+                    title: "",
+                    action: action,
+                    variant: .tertiary,
+                    size: .small,
+                    isEnabled: true,
+                    isLoading: false,
+                    image: .init(
+                        image: Image(systemName: "chevron.left"),
+                        size: .small,
+                        contentMode: .fit
+                    )
+                )
+            )
+        }
+    }
+    
+    @MainActor
+    @ToolbarContentBuilder
     public static func add(action: @escaping () -> Void) -> some ToolbarContent {
         ToolbarItem(placement: .primaryAction) {
             DSButton(

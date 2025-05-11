@@ -11,25 +11,49 @@ public struct DSButton: View {
     public var body: some View {
         Button(action: viewModel.action) {
             HStack(spacing: .dsSpacingXs) {
-                if let image = viewModel.image {
-                    DSImage(image)
-                }
-                
                 if viewModel.isLoading {
                     ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: viewModel.variant.foregroundColor))
+                        .progressViewStyle(
+                            CircularProgressViewStyle(
+                                tint: viewModel.variant.foregroundColor
+                            )
+                        )
                 } else {
-                    Text(viewModel.title)
-                        .font(viewModel.size.font)
-                        .fontWeight(.medium)
+                    if let image = viewModel.image {
+                        DSImage(image)
+                    }
+                    if let text = viewModel.title {
+                        DSText(
+                            .init(
+                                text: text,
+                                font: viewModel.size.font,
+                                color: viewModel.variant.foregroundColor
+                            )
+                        )
+                    }
                 }
             }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, viewModel.size.verticalPadding)
+            .if(viewModel.variant == .fab) { view in
+                view
+                    .frame(
+                        width: viewModel.size.fabSize,
+                        height: viewModel.size.fabSize
+                    )
+                    .dsShadow(.large)
+            }
+            .if(viewModel.variant != .fab) { view in
+                view
+                    .frame(minWidth: viewModel.minWidth)
+                    .frame(maxWidth: viewModel.maxWidth)
+                    .padding(.vertical, viewModel.size.verticalPadding)
+                    .padding(.horizontal, viewModel.size.horizontalPadding)
+            }
             .foregroundColor(viewModel.variant.foregroundColor)
             .background(viewModel.variant.backgroundColor)
-            .cornerRadius(.dsCornerRadiusMd)
+            .cornerRadius(viewModel.variant == .fab ? .dsCornerRadiusCircle : .dsCornerRadiusMd)
             .opacity(viewModel.isEnabled ? 1 : 0.5)
+            .dsShadow(viewModel.variant == .fab ? .large : .small)
+
         }
         .disabled(!viewModel.isEnabled || viewModel.isLoading)
     }
@@ -43,8 +67,25 @@ struct DSButton_Previews: PreviewProvider {
                 title: "Primary Button",
                 action: {},
                 variant: .primary,
-                size: .large
+                size: .large,
+                maxWidth: .infinity
             ))
+            
+            DSButton(
+                .init(
+                    title: "Primary Button",
+                    action: {},
+                    variant: .primary,
+                    size: .large,
+                    isEnabled: true,
+                    isLoading: false,
+                    image: .init(
+                        image: Image(systemName: "plus"),
+                        size: .small,
+                        contentMode: .fit
+                    )
+                )
+            )
             
             DSButton(.init(
                 title: "Secondary Button",
@@ -65,6 +106,7 @@ struct DSButton_Previews: PreviewProvider {
                 action: {},
                 variant: .primary,
                 size: .large,
+                minWidth: 100,
                 isLoading: true
             ))
             
@@ -82,6 +124,190 @@ struct DSButton_Previews: PreviewProvider {
                 variant: .destructive,
                 size: .large
             ))
+            HStack {
+                DSButton(
+                    .init(
+                        action: {},
+                        variant: .primary,
+                        size: .small,
+                        isEnabled: true,
+                        isLoading: true,
+                        image: .init(
+                            image: Image(systemName: "plus"),
+                            size: .small,
+                            contentMode: .fit
+                        )
+                    )
+                )
+                DSButton(
+                    .init(
+                        action: {},
+                        variant: .secondary,
+                        size: .small,
+                        isEnabled: true,
+                        isLoading: true,
+                        image: .init(
+                            image: Image(systemName: "plus"),
+                            size: .small,
+                            contentMode: .fit
+                        )
+                    )
+                )
+                DSButton(
+                    .init(
+                        action: {},
+                        variant: .tertiary,
+                        size: .small,
+                        isEnabled: true,
+                        isLoading: true,
+                        image: .init(
+                            image: Image(systemName: "plus"),
+                            size: .small,
+                            contentMode: .fit
+                        )
+                    )
+                )
+            }
+            HStack {
+                DSButton(
+                    .init(
+                        action: {},
+                        variant: .primary,
+                        size: .small,
+                        isEnabled: true,
+                        isLoading: false,
+                        image: .init(
+                            image: Image(systemName: "plus"),
+                            size: .small,
+                            contentMode: .fit
+                        )
+                    )
+                )
+                DSButton(
+                    .init(
+                        action: {},
+                        variant: .secondary,
+                        size: .small,
+                        isEnabled: true,
+                        isLoading: false,
+                        image: .init(
+                            image: Image(systemName: "plus"),
+                            size: .small,
+                            contentMode: .fit
+                        )
+                    )
+                )
+                DSButton(
+                    .init(
+                        action: {},
+                        variant: .tertiary,
+                        size: .small,
+                        isEnabled: true,
+                        isLoading: false,
+                        image: .init(
+                            image: Image(systemName: "plus"),
+                            size: .small,
+                            contentMode: .fit
+                        )
+                    )
+                )
+            }
+            HStack {
+                DSButton(
+                    .init(
+                        action: {},
+                        variant: .fab,
+                        size: .small,
+                        isEnabled: true,
+                        isLoading: true,
+                        image: .init(
+                            image: Image(systemName: "plus"),
+                            size: .small,
+                            contentMode: .fit
+                        )
+                    )
+                )
+                DSButton(
+                    .init(
+                        action: {},
+                        variant: .fab,
+                        size: .medium,
+                        isEnabled: true,
+                        isLoading: true,
+                        image: .init(
+                            image: Image(systemName: "plus"),
+                            size: .small,
+                            contentMode: .fit
+                        )
+                    )
+                )
+                DSButton(
+                    .init(
+                        action: {},
+                        variant: .fab,
+                        size: .large,
+                        isEnabled: true,
+                        isLoading: true,
+                        image: .init(
+                            image: Image(systemName: "plus"),
+                            size: .small,
+                            contentMode: .fit
+                        )
+                    )
+                )
+                DSButton(
+                    .init(
+                        action: {},
+                        variant: .fab,
+                        size: .small,
+                        isEnabled: true,
+                        isLoading: false,
+                        image: .init(
+                            image: Image(systemName: "plus"),
+                            size: .custom(
+                                .init(
+                                    width: 16,
+                                    height: 16
+                                )
+                            ),
+                            contentMode: .fit
+                        )
+                    )
+                )
+                DSButton(
+                    .init(
+                        action: {},
+                        variant: .fab,
+                        size: .medium,
+                        isEnabled: true,
+                        isLoading: false,
+                        image: .init(
+                            image: Image(systemName: "plus"),
+                            size: .custom(
+                                .init(
+                                    width: 20,
+                                    height: 20
+                                )
+                            ),
+                            contentMode: .fit
+                        )
+                    )
+                )
+                DSButton(
+                    .init(
+                        action: {},
+                        variant: .fab,
+                        size: .large,
+                        isEnabled: true,
+                        isLoading: false,
+                        image: .init(
+                            image: Image(systemName: "plus"),
+                            size: .small,
+                            contentMode: .fit
+                        )
+                    )
+                )
+            }
         }
         .padding()
         .background(Color.dsBackground)
