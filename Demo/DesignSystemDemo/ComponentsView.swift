@@ -58,6 +58,19 @@ struct DSButtonDemo: View {
             }
             DSText(.init(text: "Loading State", font: .dsHeadline))
             DSButton(.init(title: "Loading", action: {}, variant: .primary, size: .large, isLoading: true))
+            DSText(.init(text: "Icon Buttons", font: .dsHeadline))
+            HStack(spacing: .dsSpacingSm) {
+                DSButton(.init(action: {}, variant: .primary, size: .large, isEnabled: false, image: .init(image: Image(systemName: "plus"), size: .small, contentMode: .fit)))
+                DSButton(.init(action: {}, variant: .secondary, size: .large, isEnabled: false, image: .init(image: Image(systemName: "plus"), size: .small, contentMode: .fit)))
+                DSButton(.init(action: {}, variant: .tertiary, size: .large, isEnabled: false, image: .init(image: Image(systemName: "plus"), size: .small, contentMode: .fit)))
+            }
+            
+            DSText(.init(text: "FAB Buttons", font: .dsHeadline))
+            HStack(spacing: .dsSpacingSm) {
+                DSButton(.init(action: {}, variant: .fab, size: .small, isEnabled: false, image: .init(image: Image(systemName: "plus"), size: .custom(.init(width: 16, height: 16)), contentMode: .fit)))
+                DSButton(.init(action: {}, variant: .fab, size: .medium, isEnabled: false, image: .init(image: Image(systemName: "plus"), size: .custom(.init(width: 20, height: 20)), contentMode: .fit)))
+                DSButton(.init(action: {}, variant: .fab, size: .large, isEnabled: false, image: .init(image: Image(systemName: "plus"), size: .small, contentMode: .fit)))
+            }
         }
     }
 }
