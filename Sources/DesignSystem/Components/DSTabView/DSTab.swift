@@ -9,10 +9,18 @@ public struct DSTab<Content: View>: View {
     }
     
     public var body: some View {
-        TabView {
-            viewModel.content
+        if #available(iOS 26.0, *) {
+            TabView {
+                viewModel.content
+            }
+            .tint(.dsPrimary)
+            .tabBarMinimizeBehavior(.onScrollDown)
+        } else {
+            TabView {
+                viewModel.content
+            }
+            .tint(.dsPrimary)
         }
-        .tint(.dsPrimary)
     }
 }
 

@@ -10,7 +10,6 @@ public struct DSNavigationModifier: ViewModifier {
             content
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationTitle(title)
-                .toolbarBackground(Color.dsSurface, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
                 .background(Color.dsBackground)
         case .secondary:
