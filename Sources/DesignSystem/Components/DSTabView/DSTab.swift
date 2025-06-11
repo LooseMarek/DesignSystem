@@ -5,7 +5,6 @@ public struct DSTab<Content: View>: View {
     
     public init(_ viewModel: ViewModel) {
         self.viewModel = viewModel
-        UITabBar.appearance().backgroundColor = UIColor(Color.dsSurface)
         UITabBar.appearance().unselectedItemTintColor = UIColor(Color.dsTextSecondary)
     }
     

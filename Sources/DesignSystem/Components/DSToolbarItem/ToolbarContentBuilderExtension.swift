@@ -7,7 +7,6 @@ extension ToolbarContentBuilder {
         ToolbarItem(placement: .navigationBarLeading) {
             DSButton(
                 .init(
-                    title: "",
                     action: action,
                     variant: .tertiary,
                     size: .small,
@@ -29,7 +28,6 @@ extension ToolbarContentBuilder {
         ToolbarItem(placement: .primaryAction) {
             DSButton(
                 .init(
-                    title: "",
                     action: action,
                     variant: .tertiary,
                     size: .small,
@@ -51,7 +49,6 @@ extension ToolbarContentBuilder {
         ToolbarItem(placement: .primaryAction) {
             DSButton(
                 .init(
-                    title: "",
                     action: action,
                     variant: .tertiary,
                     size: .small,
@@ -73,7 +70,6 @@ extension ToolbarContentBuilder {
         ToolbarItem(placement: .destructiveAction) {
             DSButton(
                 .init(
-                    title: "",
                     action: action,
                     variant: .tertiary,
                     size: .small,
