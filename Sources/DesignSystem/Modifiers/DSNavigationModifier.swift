@@ -7,11 +7,20 @@ public struct DSNavigationModifier: ViewModifier {
     public func body(content: Content) -> some View {
         switch variant {
         case .primary:
-            content
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationTitle(title)
-                .toolbarBackground(.visible, for: .navigationBar)
-                .background(Color.dsBackground)
+            if #available(iOS 26.0, *) {
+                content
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationTitle(title)
+                    .toolbarBackground(.visible, for: .navigationBar)
+                    .background(Color.dsBackground)
+            } else {
+                content
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationTitle(title)
+                    .toolbarBackground(Color.dsSurface, for: .navigationBar)
+                    .toolbarBackground(.visible, for: .navigationBar)
+                    .background(Color.dsBackground)
+            }
         case .secondary:
             content
                 .navigationBarTitleDisplayMode(.inline)

@@ -5,7 +5,11 @@ public struct DSTab<Content: View>: View {
     
     public init(_ viewModel: ViewModel) {
         self.viewModel = viewModel
+        
         UITabBar.appearance().unselectedItemTintColor = UIColor(Color.dsTextSecondary)
+        if #available(iOS 26.0, *) {} else {
+            UITabBar.appearance().backgroundColor = UIColor(Color.dsSurface)
+        }
     }
     
     public var body: some View {
