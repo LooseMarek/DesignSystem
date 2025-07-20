@@ -18,7 +18,8 @@ public struct DSTab<Content: View>: View {
                 viewModel.content
             }
             .tint(.dsPrimary)
-            .tabBarMinimizeBehavior(.onScrollDown)
+            // TODO: Add this when XCode 26 will be released
+//            .tabBarMinimizeBehavior(.onScrollDown)
         } else {
             TabView {
                 viewModel.content
