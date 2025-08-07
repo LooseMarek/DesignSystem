@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 15.0, *)
 struct DSConfirmationAlertModifier: ViewModifier {
     var title: String
     var message: String
@@ -44,6 +45,7 @@ struct DSConfirmationAlertModifier: ViewModifier {
     }
 }
 
+@available(iOS 15.0, *)
 extension View {
     public func dsConfirmationAlert(
         title: String,

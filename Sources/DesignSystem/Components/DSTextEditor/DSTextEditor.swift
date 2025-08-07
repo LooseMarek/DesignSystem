@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 16.0, *)
 public struct DSTextEditor: View {
     let viewModel: ViewModel
     
@@ -32,6 +33,8 @@ public struct DSTextEditor: View {
 }
 
 // MARK: - Preview
+
+@available(iOS 16.0, *)
 struct DSTextEditor_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: .dsSpacingMd) {

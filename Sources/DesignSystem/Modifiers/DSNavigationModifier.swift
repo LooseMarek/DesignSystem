@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 16.0, *)
 public struct DSNavigationModifier: ViewModifier {
     let title: String
     let variant: Variant
@@ -30,6 +31,7 @@ public struct DSNavigationModifier: ViewModifier {
     }
 }
 
+@available(iOS 16.0, *)
 extension View {
     public func dsNavigation(
         title: String,

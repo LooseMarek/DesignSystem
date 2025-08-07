@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 15.0, *)
 public struct DSTab<Content: View>: View {
     let viewModel: ViewModel
     
@@ -30,6 +31,8 @@ public struct DSTab<Content: View>: View {
 }
 
 // MARK: - Preview
+
+@available(iOS 15.0, *)
 struct DSTab_Previews: PreviewProvider {
     static var previews: some View {
         DSTab(

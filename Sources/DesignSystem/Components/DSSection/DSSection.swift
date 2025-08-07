@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 15.0, *)
 public struct DSSection<Content: View>: View {
     let viewModel: ViewModel
     
@@ -42,6 +43,8 @@ public struct DSSection<Content: View>: View {
 }
 
 // MARK: - Preview
+
+@available(iOS 15.0, *)
 struct DSSection_Previews: PreviewProvider {
     static var previews: some View {
         DSScroll(.init {

@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 15.0, *)
 extension DSTab {
     public struct ViewModel {
         let content: Content
