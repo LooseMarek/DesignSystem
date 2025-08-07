@@ -340,7 +340,7 @@
 			repositoryURL = "https://github.com/LooseMarek/DesignSystem";
 			requirement = {
 				kind = exactVersion;
-				version = 1.0.4;
+				version = 1.0.5;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
