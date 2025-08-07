@@ -1,38 +1,14 @@
 import SwiftUI
 
 public extension Color {
-    static var dsBackground: Color {
-        @Environment(\.colorPalette) var palette
-        return palette.dsBackground
-    }
-    static var dsSurface: Color {
-        @Environment(\.colorPalette) var palette
-        return palette.dsSurface
-    }
-    static var dsPrimary: Color {
-        @Environment(\.colorPalette) var palette
-        return palette.dsPrimary
-    }
-    static var dsAccent: Color {
-        @Environment(\.colorPalette) var palette
-        return palette.dsAccent
-    }
-    static var dsText: Color {
-        @Environment(\.colorPalette) var palette
-        return palette.dsText
-    }
-    static var dsTextSecondary: Color {
-        @Environment(\.colorPalette) var palette
-        return palette.dsTextSecondary
-    }
-    static var dsBorder: Color {
-        @Environment(\.colorPalette) var palette
-        return palette.dsBorder
-    }
-    static var dsError: Color {
-        @Environment(\.colorPalette) var palette
-        return palette.dsError
-    }
+    static let dsBackground = Color(hex: "1C1E2D")!
+    static let dsSurface = Color(hex: "252736")!
+    static let dsPrimary = Color(hex: "20E1DC")!
+    static let dsAccent = Color(hex: "FF7B5C")!
+    static let dsText = Color.white
+    static let dsTextSecondary = Color(hex: "8F90A6")!
+    static let dsBorder = Color(hex: "2F3142")!
+    static let dsError = Color(hex: "FF4D4D")!
 }
 
 public extension Color {
