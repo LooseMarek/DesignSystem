@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/LooseMarek/DesignSystem",
       "state" : {
-        "revision" : "f6fd0d6f7d13c62c40d7f32b7239f6187b1dac07",
-        "version" : "1.0.2"
+        "revision" : "040a8663f9f295c926d88d1261d28b83611774d9",
+        "version" : "1.0.3"
       }
     }
   ],
