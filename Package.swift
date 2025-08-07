@@ -1,9 +1,9 @@
-// swift-tools-version: 6.1
+// swift-tools-version: 5.1
 import PackageDescription
 
 let package = Package(
     name: "DesignSystem",
-    platforms: [.iOS(.v18)],
+    platforms: [.iOS(.v13)],
     products: [
         .library(
             name: "DesignSystem",
