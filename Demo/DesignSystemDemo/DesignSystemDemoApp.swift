@@ -14,6 +14,10 @@ struct DesignSystemDemoApp: App {
         WindowGroup {
             MainTabView()
                 .preferredColorScheme(.dark)
+                .onAppear {
+                    // Example override of Design System colors
+                    DSColorOverrides.dsBackground = .dsBackground
+                }
         }
     }
 }

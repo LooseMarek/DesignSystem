@@ -1,14 +1,25 @@
 import SwiftUI
 
+public class DSColorOverrides {
+    nonisolated(unsafe) public static var dsBackground: Color = Color(hex: "1C1E2D")!
+    nonisolated(unsafe) public static var dsSurface: Color = Color(hex: "252736")!
+    nonisolated(unsafe) public static var dsPrimary: Color = Color(hex: "20E1DC")!
+    nonisolated(unsafe) public static var dsAccent: Color = Color(hex: "FF7B5C")!
+    nonisolated(unsafe) public static var dsText: Color = Color.white
+    nonisolated(unsafe) public static var dsTextSecondary: Color = Color(hex: "8F90A6")!
+    nonisolated(unsafe) public static var dsBorder: Color = Color(hex: "2F3142")!
+    nonisolated(unsafe) public static var dsError: Color = Color(hex: "FF4D4D")!
+}
+
 public extension Color {
-    static let dsBackground = Color(hex: "1C1E2D")!
-    static let dsSurface = Color(hex: "252736")!
-    static let dsPrimary = Color(hex: "20E1DC")!
-    static let dsAccent = Color(hex: "FF7B5C")!
-    static let dsText = Color.white
-    static let dsTextSecondary = Color(hex: "8F90A6")!
-    static let dsBorder = Color(hex: "2F3142")!
-    static let dsError = Color(hex: "FF4D4D")!
+    static var dsBackground: Color { DSColorOverrides.dsBackground }
+    static var dsSurface: Color { DSColorOverrides.dsSurface }
+    static var dsPrimary: Color { DSColorOverrides.dsPrimary }
+    static var dsAccent: Color { DSColorOverrides.dsAccent }
+    static var dsText: Color { DSColorOverrides.dsText }
+    static var dsTextSecondary: Color { DSColorOverrides.dsTextSecondary }
+    static var dsBorder: Color { DSColorOverrides.dsBorder }
+    static var dsError: Color { DSColorOverrides.dsError }
 }
 
 public extension Color {
