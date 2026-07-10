@@ -1,0 +1,44 @@
+{
+  "enabledPlugins": {
+    "phase-4-development@mar-claude-plugins": true
+  },
+  "permissions": {
+    "allow": [
+      "Read(*)",
+      "Write(*)",
+      "Edit(*)",
+      "Bash(mkdir*)",
+      "Bash(git status*)",
+      "Bash(git log*)",
+      "Bash(git diff*)",
+      "Bash(git fetch*)",
+      "Bash(git pull*)",
+      "Bash(git checkout*)",
+      "Bash(git switch*)",
+      "Bash(git branch*)",
+      "Bash(git add*)",
+      "Bash(git commit*)",
+      "Bash(git stash*)",
+      "Bash(git merge*)",
+      "Bash(git push*)",
+      "Bash(gh issue*)",
+      "Bash(gh pr create*)",
+      "Bash(gh pr list*)",
+      "Bash(gh pr view*)",
+      "Bash(gh pr edit*)",
+      "Bash(gh pr checkout*)",
+      "Bash(gh repo*)",
+      "Bash(gh label*)",
+      "Bash(xcodebuild*)",
+      "Bash(swift*)"
+    ],
+    "deny": [
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(git reset --hard*)",
+      "Bash(rm -rf*)",
+      "Bash(gh pr review*)",
+      "Bash(gh pr merge*)"
+    ]
+  }
+}
