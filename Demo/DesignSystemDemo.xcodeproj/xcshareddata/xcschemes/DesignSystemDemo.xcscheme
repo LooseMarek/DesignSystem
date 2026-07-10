@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1630"
+   LastUpgradeVersion = "1430"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES"
-      buildArchitectures = "Automatic">
+      runPostActionsOnFailure = "NO">
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -15,7 +15,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9D4BE2302DC623DC008248A4"
+               BlueprintIdentifier = "4F48062D8CAFAD935D848541"
                BuildableName = "DesignSystemDemo.app"
                BlueprintName = "DesignSystemDemo"
                ReferencedContainer = "container:DesignSystemDemo.xcodeproj">
@@ -28,7 +28,18 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      shouldAutocreateTestPlan = "YES">
+      onlyGenerateCoverageForSpecifiedTargets = "NO">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "4F48062D8CAFAD935D848541"
+            BuildableName = "DesignSystemDemo.app"
+            BlueprintName = "DesignSystemDemo"
+            ReferencedContainer = "container:DesignSystemDemo.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+      <Testables>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -44,12 +55,14 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9D4BE2302DC623DC008248A4"
+            BlueprintIdentifier = "4F48062D8CAFAD935D848541"
             BuildableName = "DesignSystemDemo.app"
             BlueprintName = "DesignSystemDemo"
             ReferencedContainer = "container:DesignSystemDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+      </CommandLineArguments>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -61,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9D4BE2302DC623DC008248A4"
+            BlueprintIdentifier = "4F48062D8CAFAD935D848541"
             BuildableName = "DesignSystemDemo.app"
             BlueprintName = "DesignSystemDemo"
             ReferencedContainer = "container:DesignSystemDemo.xcodeproj">
