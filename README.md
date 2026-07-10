@@ -39,7 +39,7 @@ DesignSystem/
 
 ## CI/CD
 
-- **GitHub Actions:** `.github/workflows/spm_ios_build_test.yml` runs the package's unit + snapshot tests on every push/PR to `master`. `.github/workflows/spm_ios_beta.yml` uploads the Demo app to TestFlight on manual dispatch.
+- **GitHub Actions:** `.github/workflows/spm_ios_build_test.yml` runs the package's unit + snapshot tests on every push/PR to `main`. `.github/workflows/spm_ios_beta.yml` uploads the Demo app to TestFlight on manual dispatch.
 - **Fastlane:** `fastlane ios test` runs the package's test suite; `fastlane ios beta` builds and uploads the Demo app to TestFlight.
 
 ---

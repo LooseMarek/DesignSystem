@@ -7,7 +7,7 @@ jobs:
   beta:
     name: Build and Upload to TestFlight
     runs-on: self-hosted
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
 
     steps:
       - name: Checkout

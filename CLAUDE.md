@@ -56,8 +56,8 @@ DesignSystem/
 ### Git
 **Branch Naming:** `{type}/{issue-number}-{short-description}`
 **Commit Style:** Conventional Commits (`feat:`, `fix:`, `test:`, `chore:`, etc.)
-**Merge Strategy:** Always use **rebase and merge** when merging PRs into `master` to keep a flat, linear history. Do not use merge commits or squash.
-**CI gate:** Always wait for CI to pass on the PR before merging into `master`. Never merge a branch with a failing or in-progress CI run.
+**Merge Strategy:** Always use **rebase and merge** when merging PRs into `main` to keep a flat, linear history. Do not use merge commits or squash.
+**CI gate:** Always wait for CI to pass on the PR before merging into `main`. Never merge a branch with a failing or in-progress CI run.
 
 ---
 

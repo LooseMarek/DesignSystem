@@ -2,13 +2,13 @@ name: Build and Test SPM (iOS)
 
 on:
   push:
-    branches: [master]
+    branches: [main]
     paths:
       - 'Sources/**'
       - 'Tests/**'
       - 'Package.swift'
   pull_request:
-    branches: [master]
+    branches: [main]
     paths:
       - 'Sources/**'
       - 'Tests/**'
