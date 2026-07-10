@@ -1,0 +1,58 @@
+{
+    "metadata": {
+        "name": "DesignSystem",
+        "projectDescription": "A SwiftUI design system package providing reusable components, tokens, and modifiers for building consistent iOS applications, plus a Demo app showcasing them."
+    },
+    "activeComponents": ["spm"],
+    "components": {
+        "spm": {
+            "packageName": "DesignSystem",
+            "moduleName": "DesignSystem",
+            "swiftVersion": "6.2",
+            "mode": "single",
+            "platforms": [
+                {
+                    "deploymentTarget": "iOS 17.0",
+                    "localBuildTarget": "platform=iOS Simulator,name=iPhone 17 Pro",
+                    "ciBuildTarget": "platform=iOS Simulator,name=iPhone 17 Pro"
+                }
+            ],
+            "testTypes": ["unit", "snapshot"],
+            "dependencies": [
+                {
+                    "name": "swift-snapshot-testing",
+                    "url": "https://github.com/pointfreeco/swift-snapshot-testing",
+                    "version": "1.19.2",
+                    "product": "SnapshotTesting"
+                }
+            ],
+            "demo": {
+                "app": {
+                    "bundleIdentifier": "com.marekloose.DesignSystemDemo",
+                    "iosDeploymentTarget": "17.0"
+                }
+            }
+        }
+    },
+    "infrastructure": {
+        "appleTeamId": "9JVYUSJU3D",
+        "gitHub": {
+            "username": "LooseMarek",
+            "private": false,
+            "project": true,
+            "labels": true,
+            "actions": true,
+            "gitignore": true
+        },
+        "fastlane": {
+            "enabled": true,
+            "components": ["spm"],
+            "appleId": "loose.marek@gmail.com"
+        },
+        "readme": true,
+        "claude": {
+            "claudeMd": true,
+            "settingsLocal": true
+        }
+    }
+}
