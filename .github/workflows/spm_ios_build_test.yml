@@ -1,0 +1,64 @@
+name: Build and Test SPM (iOS)
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'Sources/**'
+      - 'Tests/**'
+      - 'Package.swift'
+  pull_request:
+    branches: [master]
+    paths:
+      - 'Sources/**'
+      - 'Tests/**'
+      - 'Package.swift'
+  workflow_dispatch:
+
+concurrency:
+  group: ios-simulator-serial
+  cancel-in-progress: false
+
+jobs:
+  build-and-test:
+    name: Build and Test (iOS)
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup environment
+        run: |
+          echo "/opt/homebrew/bin" >> $GITHUB_PATH
+          echo "/opt/homebrew/shims" >> $GITHUB_PATH
+          echo "/usr/bin" >> $GITHUB_PATH
+          sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+          export PATH="/opt/homebrew/bin:/opt/homebrew/shims:$PATH"
+          bundle install
+
+      - name: Cleanup Simulator State (important)
+        run: |
+          killall Simulator || true
+          killall -9 com.apple.CoreSimulator.CoreSimulatorService || true
+          xcrun simctl shutdown all || true
+          xcrun simctl erase all || true
+          sleep 5
+
+      - name: Run tests via Fastlane
+        env:
+          LANG: en_US.UTF-8
+          LC_ALL: en_US.UTF-8
+          FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT: "120"
+          FASTLANE_XCODEBUILD_SETTINGS_RETRIES: "5"
+        run: |
+          export PATH="/opt/homebrew/bin:/opt/homebrew/shims:$PATH"
+          bundle exec fastlane ios test
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: snapshot-failures-ios-${{ github.run_id }}
+          path: fastlane/test_output/
+          retention-days: 14
