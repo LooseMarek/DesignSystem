@@ -90,3 +90,32 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 ## Environment & Secrets
 
 **Secret Management:** GitHub Secrets for CI/CD, `.env` files locally (not committed)
+
+---
+
+## Hub Sync Convention
+
+1. **Archived check** (mechanical, checked first, absolute): if the repo has a git tag
+   literally named `archived`, set `state` to `"archived"` in every product folder's
+   `config.json` under `./hub/products/` and stop — this overrides everything below,
+   including a previously hand-set `state`.
+2. **State + version check** (mechanical, no judgment call): read the repo's current
+   latest semver git tag. Mirror it into `version` in every product folder's
+   `config.json` with the leading `v` stripped (tag `v2.0.2` → `version: "2.0.2"` —
+   the Hub site's badge prepends its own `v`), regardless of the outcome below. If
+   it's the first tag reaching `1.0.0`, update every one of them to `"mvp-published"`;
+   if beyond `1.0.0`, update to `"established"`. Only move `state` forward — never
+   overwrite a `state` already at or past what the tag implies. No tag, or a tag that
+   doesn't cross either threshold: leave `state` untouched (but `version` still
+   updates if a tag exists).
+3. **Promo recheck** (judgment call, only if step 2 bumped `state`): per product
+   folder, compare what changed since it was last updated against what its
+   `config.json` currently says. If anything user/client-facing genuinely changed,
+   update that entry accordingly. If nothing user-facing changed, leave it untouched.
+   Skipped entirely if step 1 set `state` to `"archived"` — archiving isn't a content
+   update.
+
+Journey content is generated directly from git history by the Hub's own pipeline, not
+from anything written here. If this repo's own commits ever include generated content
+that shouldn't be treated as journal-worthy activity, describe it in
+`./hub/config.json`'s `excludedContent` field.

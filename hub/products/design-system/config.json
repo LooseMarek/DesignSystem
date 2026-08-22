@@ -1,0 +1,39 @@
+{
+    "hubVersion": 1,
+    "kind": "promo",
+    "slug": "design-system",
+    "displayName": "Design System",
+    "domain": "software",
+    "state": "established",
+    "version": "1.0.6",
+    "hostingScope": "public",
+    "githubLink": "https://github.com/LooseMarek/DesignSystem",
+    "relatedSlugs": ["word-tracker", "ppg-flight-planner"],
+    "tagline": "A reusable SwiftUI design system for Marek's iOS apps — one dependency for consistent components, tokens, and modifiers.",
+    "overview": "DesignSystem is a Swift Package that centralizes the SwiftUI building blocks Marek's personal iOS apps share, so new apps don't rebuild the same buttons, cards, and typography from scratch. It ships a matched set of components, dynamic light/dark-aware design tokens, and reusable view modifiers behind a single import DesignSystem. A bundled Demo app showcases and visually verifies every component and token.",
+    "features": [
+        "DSButton — customizable button with multiple sizes and variants",
+        "DSText — typography component with predefined text styles",
+        "DSTextField & DSTextEditor — consistent single- and multi-line text input",
+        "DSCard & DSSection — components for grouping and organizing content",
+        "DSTabView & DSToolbarItem — navigation and toolbar building blocks",
+        "DSToggle & DScrollView — additional interactive and layout components",
+        "Dynamic design tokens — light/dark-aware color, typography, and spacing",
+        "Reusable modifiers — confirmation alerts, shadows, navigation variants, and general view helpers"
+    ],
+    "platforms": [
+        {
+            "name": "ios",
+            "techStack": ["Swift 6.2", "SwiftUI", "Swift Package Manager", "XCTest", "swift-snapshot-testing"],
+            "linkToStore": null,
+            "screenshots": ["01_components.png", "02_components.png", "03_tokens.png"]
+        },
+        {
+            "name": "spm",
+            "techStack": ["Swift 6.2", "SwiftUI", "Swift Package Manager", "XCTest", "swift-snapshot-testing"],
+            "linkToStore": null,
+            "screenshots": []
+        }
+    ],
+    "updatedAt": "2026-07-10T18:11:36Z"
+}
